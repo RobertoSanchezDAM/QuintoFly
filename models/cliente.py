@@ -9,4 +9,6 @@ class Cliente(models.Model):
 
     email = fields.Char("Email")
 
-    # ESTOY CALVO DE COJONES
+    # me pesa el huevo izquierdo
+    # y el derecho tambien
+    
