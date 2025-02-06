@@ -1,0 +1,60 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+<!--
+    <record model="ir.ui.view" id="quintofly.list">
+      <field name="name">quintofly list</field>
+      <field name="model">quintofly.quintofly</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+-->
+
+    <!-- actions opening views on models -->
+<!--
+    <record model="ir.actions.act_window" id="quintofly.action_window">
+      <field name="name">quintofly window</field>
+      <field name="res_model">quintofly.quintofly</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="quintofly.action_server">
+      <field name="name">quintofly server</field>
+      <field name="model_id" ref="model_quintofly_quintofly"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="QuintoFly" id="quintofly.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="quintofly.menu_1" parent="quintofly.menu_root"/>
+    <menuitem name="Menu 2" id="quintofly.menu_2" parent="quintofly.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="quintofly.menu_1_list" parent="quintofly.menu_1"
+              action="quintofly.action_window"/>
+    <menuitem name="Server to list" id="quintofly" parent="quintofly.menu_2"
+              action="quintofly.action_server"/>
+-->
+  </data>
+</odoo>

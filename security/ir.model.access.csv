@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_quintofly_aeronave,quintofly.aeronave,model_quintofly_aeronave,base.group_user,1,1,1,1
+access_quintofly_cliente,quintofly.cliente,model_quintofly_cliente,base.group_user,1,1,1,1
+access_quintofly_factura,quintofly.factura,model_quintofly_factura,base.group_user,1,1,1,1
+access_quintofly_lineaventa,quintofly.lineaventa,model_quintofly_lineaventa,base.group_user,1,1,1,1
+access_quintofly_servicio,quintofly.servicio,model_quintofly_servicio,base.group_user,1,1,1,1
+access_quintofly_venta,quintofly.venta,model_quintofly_venta,base.group_user,1,1,1,1
+access_quintofly_vuelo,quintofly.vuelo,model_quintofly_vuelo,base.group_user,1,1,1,1
+access_quintofly_piloto,quintofly.piloto,model_quintofly_piloto,base.group_user,1,1,1,1
