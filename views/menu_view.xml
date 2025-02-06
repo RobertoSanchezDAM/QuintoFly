@@ -3,7 +3,7 @@
     <menuitem id="quintofly.main_quintofly_menu" name="QuintoFly"/>
 
     <menuitem id="quintofly.aeronave_menu" name="Aeronaves" parent="quintofly.main_quintofly_menu"/>
-    <menuitem id="quintofly.aeronave_manage" name="Gestionar Aeronaves" parent="quintofly.aeronave_menu" action="act_aeronave"/>
+    <menuitem id="quintofly.aeronave_manage" name="Gestionar Aeronaves" parent="quintofly.aeronave_menu" action="quintofly.act_aeronave"/>
 
     <menuitem id="quintofly.cliente_menu" name="Clientes" parent="quintofly.main_quintofly_menu"/>
     <menuitem id="quintofly.cliente_manage" name="Gestionar Clientes" parent="quintofly.cliente_menu" action="act_cliente"/>

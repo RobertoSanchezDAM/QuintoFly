@@ -1,10 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <data>
+        <record model="ir.ui.view" id="quintofly.list">
+            <field name="name">Aeronaves</field>
+            <field name="model">quintofly.aeronave</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="matricula"/>
+                    <field name="tipo"/>
+                    <field name="modelo"/>
+                    <field name="capacidad_peso"/>
+                </tree>
+            </field>
+        </record>
+
         <record model="ir.actions.act_window" id="act_aeronave">
             <field name="name">Aeronave</field>
             <field name="res_model">quintofly.aeronave</field>
-            <field name="view_mode">form,tree</field>
+            <field name="view_mode">tree,form</field>
         </record>
     </data>
 </odoo>
