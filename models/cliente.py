@@ -8,3 +8,5 @@ class Cliente(models.Model):
     _description = 'Cliente'
 
     email = fields.Char("Email")
+
+    # ESTOY CALVO DE COJONES
