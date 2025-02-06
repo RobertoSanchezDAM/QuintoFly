@@ -8,7 +8,3 @@ class Cliente(models.Model):
     _description = 'Cliente'
 
     email = fields.Char("Email")
-
-    # me pesa el huevo izquierdo
-    # y el derecho tambien
-    
