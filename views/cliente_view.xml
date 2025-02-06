@@ -1,10 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <data>
+        <record model="ir.ui.view" id="quintofly.cliente_tree">
+            <field name="name">Clientes</field>
+            <field name="model">quintofly.cliente</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="dni"/>
+                    <field name="nombre"/>
+                    <field name="email"/>
+                </tree>
+            </field>
+        </record>
         <record model="ir.actions.act_window" id="act_cliente">
-            <field name="name">Cliente</field>
+            <field name="name">Clientes</field>
             <field name="res_model">quintofly.cliente</field>
-            <field name="view_mode">form,tree</field>
+            <field name="view_mode">tree,form</field>
         </record>
     </data>
 </odoo>

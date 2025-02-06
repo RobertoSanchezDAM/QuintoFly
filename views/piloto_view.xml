@@ -1,10 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <data>
+        <record model="ir.ui.view" id="quintofly.piloto_tree">
+            <field name="name">Pilotos</field>
+            <field name="model">quintofly.piloto</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="num_licencia"/>
+                    <field name="nombre"/>
+                    <field name="anyos_experiencia"/>
+                </tree>
+            </field>
+        </record>
         <record model="ir.actions.act_window" id="act_piloto">
-            <field name="name">Piloto</field>
+            <field name="name">Pilotos</field>
             <field name="res_model">quintofly.piloto</field>
-            <field name="view_mode">form,tree</field>
+            <field name="view_mode">tree,form</field>
         </record>
     </data>
 </odoo>

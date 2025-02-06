@@ -6,7 +6,12 @@ class Servicio(models.Model):
     _name = 'quintofly.servicio'
     _description = 'Servicio'
 
-    nombre = fields.Char("Nombre", required=True)
+    tiposerv = fields.Selection([
+    ('turismo', 'Turismo por Andalucía'),
+    ('transporte', 'Transporte'),
+    ('fumigacion', 'Fumigación'),
+    ('clases', 'Clases de pilotaje'),],
+    "Tipo de Servicio", default = "turismo", required=True)
     descripcion = fields.Text("Descripción")
     precio_hora = fields.Float("Precio por hora", required=True)
     precio_base = fields.Float("Precio base", required=True)

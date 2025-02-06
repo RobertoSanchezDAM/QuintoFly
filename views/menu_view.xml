@@ -6,23 +6,23 @@
     <menuitem id="quintofly.aeronave_manage" name="Gestionar Aeronaves" parent="quintofly.aeronave_menu" action="quintofly.act_aeronave"/>
 
     <menuitem id="quintofly.cliente_menu" name="Clientes" parent="quintofly.main_quintofly_menu"/>
-    <menuitem id="quintofly.cliente_manage" name="Gestionar Clientes" parent="quintofly.cliente_menu" action="act_cliente"/>
+    <menuitem id="quintofly.cliente_manage" name="Gestionar Clientes" parent="quintofly.cliente_menu" action="quintofly.act_cliente"/>
 
     <menuitem id="quintofly.factura_menu" name="Facturas" parent="quintofly.main_quintofly_menu"/>
-    <menuitem id="quintofly.factura_manage" name="Gestionar Facturas" parent="quintofly.factura_menu" action="act_factura"/>
+    <menuitem id="quintofly.factura_manage" name="Gestionar Facturas" parent="quintofly.factura_menu" action="quintofly.act_factura"/>
 
     <menuitem id="quintofly.lineaventa_menu" name="Líneas de Venta" parent="quintofly.main_quintofly_menu"/>
     <menuitem id="quintofly.lineaventa_manage" name="Gestionar Líneas de Venta" parent="quintofly.lineaventa_menu" action="act_lineaventa"/>
 
+    <menuitem id="quintofly.piloto_menu" name="Pilotos" parent="quintofly.main_quintofly_menu"/>
+    <menuitem id="quintofly.piloto_manage" name="Gestionar Pilotos" parent="quintofly.piloto_menu" action="quintofly.act_piloto"/>
+
     <menuitem id="quintofly.servicio_menu" name="Servicios" parent="quintofly.main_quintofly_menu"/>
-    <menuitem id="quintofly.servicio_manage" name="Gestionar Servicios" parent="quintofly.servicio_menu" action="act_servicio"/>
+    <menuitem id="quintofly.servicio_manage" name="Gestionar Servicios" parent="quintofly.servicio_menu" action="quintofly.act_servicio"/>
 
     <menuitem id="quintofly.venta_menu" name="Ventas" parent="quintofly.main_quintofly_menu"/>
-    <menuitem id="quintofly.venta_manage" name="Gestionar Ventas" parent="quintofly.venta_menu" action="act_venta"/>
+    <menuitem id="quintofly.venta_manage" name="Gestionar Ventas" parent="quintofly.venta_menu" action="quintofly.act_venta"/>
 
     <menuitem id="quintofly.vuelo_menu" name="Vuelos" parent="quintofly.main_quintofly_menu"/>
-    <menuitem id="quintofly.vuelo_manage" name="Gestionar Vuelos" parent="quintofly.vuelo_menu" action="act_vuelo"/>
-
-    <menuitem id="quintofly.piloto_menu" name="Pilotos" parent="quintofly.main_quintofly_menu"/>
-    <menuitem id="quintofly.piloto_manage" name="Gestionar Pilotos" parent="quintofly.piloto_menu" action="act_piloto"/>
+    <menuitem id="quintofly.vuelo_manage" name="Gestionar Vuelos" parent="quintofly.vuelo_menu" action="quintofly.act_vuelo"/>
 </odoo>
