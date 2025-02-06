@@ -9,9 +9,9 @@ class Cliente(models.Model):
 
     email = fields.Char("Email")
     
-    def name_get(self):
+    def nombre(self):
         result = []
         for record in self:
-            name = f"{record.dni} - {record.nombre}" if record.dni else record.nombre
+            name = f"{record.dni} --- {record.nombre}" if record.dni else record.nombre
             result.append((record.id, name))
         return result
