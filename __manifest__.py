@@ -9,7 +9,7 @@
         ¡¡Vuela a buen precio con nuestra Agencia de Viajes!!
     """,
 
-    'author': "Pablo Suero, Roberto Sánchez, Adrian Serrano",
+    'author': "Pablo Suero, Roberto Sánchez, Adrián Serrano",
     'website': "http://www.yourcompany.com",
 
     # Categories can be used to filter modules in modules listing
@@ -39,6 +39,10 @@
         'views/menu_view.xml',
         'views/views.xml',
         'views/templates.xml',
+
+        #generacion de pdf 
+        'views/report_factura.xml',  
+        'views/factura_template.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
