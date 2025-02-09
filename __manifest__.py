@@ -27,6 +27,8 @@
 
     # always loaded
     'data': [
+
+        #views de las clases
         'security/ir.model.access.csv',
         'views/piloto_view.xml',
         'views/cliente_view.xml',

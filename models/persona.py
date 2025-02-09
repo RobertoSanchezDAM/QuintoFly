@@ -16,6 +16,7 @@ class Persona(models.Model):
     telefono = fields.Char("Telefono", size = 9, required=True)
     direccion = fields.Char("Dirección", size = 60)
     
+    #constraint que el dni sea UNIQUE
     _sql_constraints=[
         ('dni_uniq',
         'UNIQUE(dni)',

@@ -18,6 +18,7 @@ class Aeronave(models.Model):
             result.append((record.id, name))
         return result
     
+    #constraint que hace que matricula sea UNIQUE
     _sql_constraints=[
         ('matricula_uniq',
         'UNIQUE(matricula)',

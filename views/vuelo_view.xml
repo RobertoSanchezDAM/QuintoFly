@@ -40,6 +40,7 @@
             </field>
         </record>
 
+        <!--vista de calendario-->
         <record id="view_vuelo_calendar" model="ir.ui.view">
             <field name="name">quintofly.vuelo.calendar</field>
             <field name="model">quintofly.vuelo</field>

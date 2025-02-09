@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
+<!--vista de los campos en el topbar de odoo-->
     <menuitem id="quintofly.main_quintofly_menu" name="QuintoFly"/>
 
     <menuitem id="quintofly.aeronave_menu" name="Aeronaves" parent="quintofly.main_quintofly_menu"/>

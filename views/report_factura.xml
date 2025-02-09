@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+    <!--necesario para generar el pdf-->
     <report
         id="report_factura_pdf"
         model="quintofly.factura"

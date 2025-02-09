@@ -5,7 +5,8 @@ from odoo import models, fields, api
 class Vuelo(models.Model):
     _name = 'quintofly.vuelo'
     _description = 'Vuelo'
- 
+    
+    #relación de campos
     piloto_ids = fields.Many2many('quintofly.piloto', string="Pilotos", required=True)
     origen = fields.Char("Origen", required=True)
     aeronave_id = fields.Many2one('quintofly.aeronave', string="Aeronave", required=True)

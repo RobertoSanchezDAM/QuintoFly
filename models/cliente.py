@@ -16,6 +16,7 @@ class Cliente(models.Model):
             result.append((record.id, name))
         return result
 
+    #constraint que hace que email sea UNIQUE
     _sql_constraints=[
         ('email_uniq',
         'UNIQUE(email)',

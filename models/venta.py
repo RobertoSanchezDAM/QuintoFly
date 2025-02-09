@@ -6,6 +6,7 @@ class Venta(models.Model):
     _name = 'quintofly.venta'
     _description = 'Venta'
 
+    #relación de campos 
     cliente_id = fields.Many2one('quintofly.cliente', string="Cliente", required=True) 
     
     total = fields.Float("Total", required=True)
@@ -19,4 +20,3 @@ class Venta(models.Model):
             result.append((record.id, name))
         return result
 
-# Prueba add commit push de un solo fichero
