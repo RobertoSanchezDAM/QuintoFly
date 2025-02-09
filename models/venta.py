@@ -18,3 +18,5 @@ class Venta(models.Model):
             name = f"Venta - {record.id}"
             result.append((record.id, name))
         return result
+
+# Prueba add commit push de un solo fichero
