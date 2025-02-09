@@ -1,6 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <data>
+        <record model="ir.ui.view" id="quintofly.factura_form">
+            <field name="name">Factura Form</field>
+            <field name="model">quintofly.factura</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="identificador"/>
+                            <field name="concepto"/>
+                            <field name="cliente_id"/>
+                            <field name="importe_total"/>
+                            <field name="fecha_factura"/>
+                            <field name="estado"/>
+                        </group>
+                        <footer>
+                            <button name="action_marcar_pagada" type="object" string="Marcar como Pagada"
+                                    class="oe_highlight" attrs="{'invisible': [('estado', '!=', 'pendiente')]}"/>
+                            <button name="action_cancelar" type="object" string="Marcar como Cancelada"
+                                    class="oe_highlight" attrs="{'invisible': [('estado', '!=', 'pendiente')]}"/>
+                        </footer>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
         <record model="ir.ui.view" id="quintofly.factura_tree">
             <field name="name">Facturas</field>
             <field name="model">quintofly.factura</field>
@@ -15,6 +40,7 @@
                 </tree>
             </field>
         </record>
+
         <record model="ir.actions.act_window" id="act_factura">
             <field name="name">Facturas</field>
             <field name="res_model">quintofly.factura</field>

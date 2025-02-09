@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="workflow_factura" model="workflow">
+            <field name="name">Workflow de Factura</field>
+            <field name="model_id" ref="model_quintofly_factura"/>
+            <field name="state">draft</field>
+        </record>
+
+        <record id="workflow_factura_trans_pendiente" model="workflow.activity">
+            <field name="workflow_id" ref="workflow_factura"/>
+            <field name="name">Pendiente</field>
+            <field name="state">pendiente</field>
+            <field name="kind">function</field>
+            <field name="action">action_pendiente</field>
+            <field name="on_create">True</field>
+        </record>
+
+        <record id="workflow_factura_trans_pagada" model="workflow.activity">
+            <field name="workflow_id" ref="workflow_factura"/>
+            <field name="name">Pagada</field>
+            <field name="state">pagada</field>
+            <field name="kind">function</field>
+            <field name="action">action_marcar_pagada</field>
+        </record>
+
+        <record id="workflow_factura_trans_cancelada" model="workflow.activity">
+            <field name="workflow_id" ref="workflow_factura"/>
+            <field name="name">Cancelada</field>
+            <field name="state">cancelada</field>
+            <field name="kind">function</field>
+            <field name="action">action_cancelar</field>
+        </record>
+
+        <record id="workflow_factura_transicion_pendiente_pagada" model="workflow.transition">
+            <field name="workflow_id" ref="workflow_factura"/>
+            <field name="act_from" ref="workflow_factura_trans_pendiente"/>
+            <field name="act_to" ref="workflow_factura_trans_pagada"/>
+            <field name="signal">signal_pago</field>
+        </record>
+
+        <record id="workflow_factura_transicion_pendiente_cancelada" model="workflow.transition">
+            <field name="workflow_id" ref="workflow_factura"/>
+            <field name="act_from" ref="workflow_factura_trans_pendiente"/>
+            <field name="act_to" ref="workflow_factura_trans_cancelada"/>
+            <field name="signal">signal_cancelar</field>
+        </record>
+    </data>
+</odoo>

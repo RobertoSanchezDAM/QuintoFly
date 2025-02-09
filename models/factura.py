@@ -26,7 +26,7 @@ class Factura(models.Model):
         ('identificador_uniq',
         'UNIQUE(identificador)',
         'El identificador tiene que ser único')
-        ]
+    ]
 
     @api.onchange('venta_id')
     def _onchange_venta_id(self):
@@ -44,3 +44,9 @@ class Factura(models.Model):
             name = f"{record.identificador} --- {record.concepto}"
             result.append((record.id, name))
         return result
+    
+    def action_marcar_pagada(self):
+        self.write({'estado': 'pagada'})
+    
+    def action_cancelar(self):
+        self.write({'estado': 'cancelada'})
