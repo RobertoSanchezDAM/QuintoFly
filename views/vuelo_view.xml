@@ -40,11 +40,24 @@
             </field>
         </record>
 
+        <record id="view_vuelo_calendar" model="ir.ui.view">
+            <field name="name">quintofly.vuelo.calendar</field>
+            <field name="model">quintofly.vuelo</field>
+            <field name="arch" type="xml">
+                <calendar string="Calendario de Vuelos" date_start="fecha_vuelo">
+                    <field name="origen"/>
+                    <field name="destino"/>
+                    <field name="aeronave_id"/>
+                </calendar>
+            </field>
+        </record>
+
+
         <record model="ir.actions.act_window" id="act_vuelo">
             <field name="name">Vuelos</field>
             <field name="res_model">quintofly.vuelo</field>
             <field name="search_view_id" ref="vuelo_view_search"/>
-            <field name="view_mode">tree,form</field>
+            <field name="view_mode">tree,form,calendar</field>
         </record>
     </data>
 </odoo>
