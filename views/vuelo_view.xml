@@ -14,9 +14,36 @@
                 </tree>
             </field>
         </record>
+
+        <record id="vuelo_view_search" model="ir.ui.view">
+            <field name="name">quintofly.vuelo.search</field>
+            <field name="model">quintofly.vuelo</field>
+            <field name="arch" type="xml">
+
+            <search string="Buscar Vuelos">
+                <!--  Filtros existentes  -->
+                <field name="origen" string="Origen"/>
+                <field name="destino" string="Destino"/>
+                <field name="piloto_ids" string="Pilotos"/>
+                <field name="aeronave_id" string="Aeronave"/>
+                
+                <separator/>
+
+                <!--  Agrupación  -->
+                <group expand="0" string="Agrupar por">
+                    <filter name="group_by_origen" string="Por Origen" context="{'group_by':'origen'}"/>
+                    <filter name="group_by_destino" string="Por Destino" context="{'group_by':'destino'}"/>
+                    <filter name="group_by_fecha" string="Por Fecha" context="{'group_by':'fecha_vuelo'}"/>
+                    <filter name="group_by_aeronave" string="Por Aeronave" context="{'group_by':'aeronave_id'}"/>
+                </group>
+            </search>
+            </field>
+        </record>
+
         <record model="ir.actions.act_window" id="act_vuelo">
             <field name="name">Vuelos</field>
             <field name="res_model">quintofly.vuelo</field>
+            <field name="search_view_id" ref="vuelo_view_search"/>
             <field name="view_mode">tree,form</field>
         </record>
     </data>

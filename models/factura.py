@@ -11,8 +11,8 @@ class Factura(models.Model):
     
     identificador = fields.Integer("Identificador", required=True)
     iva = fields.Float("IVA", required=True)
-    subtotal = fields.Float("Subtotal", required=True)
-    importe_total = fields.Float("Importe Total", required=True)
+    subtotal = fields.Float("Subtotal", required=True, readonly=True)
+    importe_total = fields.Float("Importe Total", required=True, compute="_compute_importe_total", store=True, readonly=True)
     concepto = fields.Char("Concepto", required=True)
     descripcion = fields.Text("Descripción")
     fecha_factura = fields.Datetime("Fecha de Factura", required=True)
@@ -22,6 +22,16 @@ class Factura(models.Model):
         ('cancelada', 'Cancelada')
     ], "Estado", default='pendiente', required=True)
     
+    @api.onchange('venta_id')
+    def _onchange_venta_id(self):
+        if self.venta_id:
+            self.subtotal = self.venta_id.total
+        
+    @api.depends('subtotal', 'iva')
+    def _compute_importe_total(self):
+        for record in self:
+            record.importe_total = record.subtotal + (record.subtotal * (record.iva / 100))
+
     def name_get(self):
         result = []
         for record in self:
