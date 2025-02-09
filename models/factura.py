@@ -22,6 +22,12 @@ class Factura(models.Model):
         ('cancelada', 'Cancelada')
     ], "Estado", default='pendiente', required=True)
     
+    _sql_constraints=[
+        ('identificador_uniq',
+        'UNIQUE(identificador)',
+        'El identificador tiene que ser único')
+        ]
+
     @api.onchange('venta_id')
     def _onchange_venta_id(self):
         if self.venta_id:

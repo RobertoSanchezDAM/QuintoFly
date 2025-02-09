@@ -15,3 +15,9 @@ class Cliente(models.Model):
             name = f"{record.dni} --- {record.nombre}" if record.dni else record.nombre
             result.append((record.id, name))
         return result
+
+    _sql_constraints=[
+        ('email_uniq',
+        'UNIQUE(email)',
+        'El email tiene que ser único')
+        ]

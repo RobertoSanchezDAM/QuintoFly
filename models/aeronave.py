@@ -17,3 +17,9 @@ class Aeronave(models.Model):
             name = f"{record.matricula} --- {record.tipo} {record.modelo}"
             result.append((record.id, name))
         return result
+    
+    _sql_constraints=[
+        ('matricula_uniq',
+        'UNIQUE(matricula)',
+        'La matricula tiene que ser único')
+        ]

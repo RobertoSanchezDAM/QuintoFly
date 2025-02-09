@@ -15,3 +15,9 @@ class Persona(models.Model):
     fecha= fields.Datetime('Fecha de nacimiento', required=True)
     telefono = fields.Char("Telefono", size = 9, required=True)
     direccion = fields.Char("Dirección", size = 60)
+    
+    _sql_constraints=[
+        ('dni_uniq',
+        'UNIQUE(dni)',
+        'El DNI tiene que ser único')
+        ]
