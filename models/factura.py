@@ -11,8 +11,8 @@ class Factura(models.Model):
     
     identificador = fields.Integer("Identificador", required=True)
     iva = fields.Float("IVA", required=True)
-    subtotal = fields.Float("Subtotal", required=True, readonly=True)
-    importe_total = fields.Float("Importe Total", required=True, compute="_compute_importe_total", store=True, readonly=True)
+    subtotal = fields.Float("Subtotal")
+    importe_total = fields.Float("Importe Total", compute="_compute_importe_total", store=True)
     concepto = fields.Char("Concepto", required=True)
     descripcion = fields.Text("Descripción")
     fecha_factura = fields.Datetime("Fecha de Factura", required=True)
