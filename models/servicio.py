@@ -19,6 +19,6 @@ class Servicio(models.Model):
     def name_get(self):
         result = []
         for record in self:
-            name = f"{record.nombre}"
+            name = f"Servicio {record.id} - {record.tiposerv}"
             result.append((record.id, name))
         return result

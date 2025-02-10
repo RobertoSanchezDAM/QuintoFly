@@ -14,6 +14,35 @@
             </field>
         </record>
 
+        <!-- Vista de búsqueda de aeronaves -->
+        <record id="aeronave_view_search" model="ir.ui.view">
+            <field name="name">quintofly.aeronave.search</field>
+            <field name="model">quintofly.aeronave</field>
+            <field name="arch" type="xml">
+                <search string="Buscar Aeronaves">
+                    <!-- Filtros existentes -->
+                    <field name="tipo" string="Tipo"/>
+                    <field name="matricula" string="Matrícula"/>
+                    <field name="modelo" string="Modelo"/>
+                    <field name="capacidad_peso" string="Capacidad de Peso (Kg)"/>
+                    
+                    <separator/>
+                    <!-- Filtros personalizados -->
+                    <filter name="filter_boeing" string="Aeronave contiene Boeing" domain="[('modelo', 'ilike', 'Boeing')]"/>
+                    <filter name="filter_airbus" string="Aeronave contiene Airbus" domain="[('modelo', 'ilike', 'Airbus')]"/>
+                    <filter name="filter_airbus" string="Aeronave contiene Cessna" domain="[('modelo', 'ilike', 'Cessna')]"/>
+
+                    <separator/>
+                    <!-- Agrupación -->
+                    <group expand="0" string="Agrupar por">
+                        <filter name="group_by_tipo" string="Por Tipo" context="{'group_by':'tipo'}"/>
+                        <filter name="group_by_modelo" string="Por Modelo" context="{'group_by':'modelo'}"/>
+                        <filter name="group_by_capacidad" string="Por Capacidad de Peso" context="{'group_by':'capacidad_peso'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
         <record model="ir.actions.act_window" id="act_aeronave">
             <field name="name">Aeronave</field>
             <field name="res_model">quintofly.aeronave</field>

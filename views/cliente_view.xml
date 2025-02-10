@@ -8,10 +8,39 @@
                 <tree>
                     <field name="dni"/>
                     <field name="nombre"/>
+                    <field name="apellido"/>
                     <field name="email"/>
                 </tree>
             </field>
         </record>
+
+        <!-- Vista de búsqueda de clientes -->
+        <record id="cliente_view_search" model="ir.ui.view">
+            <field name="name">quintofly.cliente.search</field>
+            <field name="model">quintofly.cliente</field>
+            <field name="arch" type="xml">
+                <search string="Buscar Clientes">
+                    <!-- Filtros existentes -->
+                    <field name="email" string="Email"/>
+                    
+                    <separator/>
+                    <!-- Filtros personalizados -->
+                    <filter name="filter_gmail" string="Gmail" domain="[('email', 'ilike', '%@gmail.com')]"/>
+                    <filter name="filter_hotmail" string="Hotmail" domain="[('email', 'ilike', '%@hotmail.com')]"/>
+                    <filter name="filter_outlook" string="Outlook" domain="[('email', 'ilike', '%@outlook.com')]"/>
+                    <filter name="filter_yahoo" string="Yahoo" domain="[('email', 'ilike', '%@yahoo.com')]"/>
+                    
+                    <separator/>
+                    <!-- Agrupación -->
+                    <group expand="0" string="Agrupar por">
+                        <filter name="group_by_nombre" string="Por Nombre" context="{'group_by':'nombre'}"/>
+                        <filter name="group_by_apellido" string="Por Apellido" context="{'group_by':'apellido'}"/>
+                        <filter name="group_by_sexo" string="Por Sexo" context="{'group_by':'sexo'}"/> 
+                    </group>
+                </search>
+            </field>
+        </record>
+
         <record model="ir.actions.act_window" id="act_cliente">
             <field name="name">Clientes</field>
             <field name="res_model">quintofly.cliente</field>

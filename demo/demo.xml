@@ -3,7 +3,8 @@
       <!-- Pilotos -->
     <record id="piloto1" model="quintofly.piloto">
         <field name="dni">66666666F</field>
-        <field name="nombre">Pedro Torres</field>
+        <field name="nombre">Pedro</field>
+        <field name="apellido">Torres</field>
         <field name="sexo">masculino</field>
         <field name="fecha">1975-09-14 00:00:00</field>
         <field name="telefono">655443322</field>
@@ -13,7 +14,8 @@
     </record>
     <record id="piloto2" model="quintofly.piloto">
         <field name="dni">77777777G</field>
-        <field name="nombre">Laura Sánchez</field>
+        <field name="nombre">Laura</field>
+        <field name="apellido">Sánchez</field>
         <field name="sexo">femenino</field>
         <field name="fecha">1988-03-22 00:00:00</field>
         <field name="telefono">688112233</field>
@@ -23,7 +25,8 @@
     </record>
     <record id="piloto3" model="quintofly.piloto">
         <field name="dni">88888888H</field>
-        <field name="nombre">Sergio Ramírez</field>
+        <field name="nombre">Sergio</field>
+        <field name="apellido">Ramírez</field>
         <field name="sexo">masculino</field>
         <field name="fecha">1990-12-10 00:00:00</field>
         <field name="telefono">677998877</field>
@@ -33,7 +36,8 @@
     </record>
     <record id="piloto4" model="quintofly.piloto">
         <field name="dni">99999999I</field>
-        <field name="nombre">Natalia Gómez</field>
+        <field name="nombre">Natalia</field>
+        <field name="apellido">Gómez</field>
         <field name="sexo">femenino</field>
         <field name="fecha">1982-07-30 00:00:00</field>
         <field name="telefono">699445566</field>
@@ -43,7 +47,8 @@
     </record>
     <record id="piloto5" model="quintofly.piloto">
         <field name="dni">10101010J</field>
-        <field name="nombre">Fernando López</field>
+        <field name="nombre">Fernando</field>
+        <field name="apellido">López</field>
         <field name="sexo">masculino</field>
         <field name="fecha">1985-11-25 00:00:00</field>
         <field name="telefono">655667788</field>
@@ -55,48 +60,53 @@
     <!-- Clientes -->
     <record id="cliente1" model="quintofly.cliente">
         <field name="dni">11111111A</field>
-        <field name="nombre">Ana López</field>
+        <field name="nombre">Ana</field>
+        <field name="apellido">López</field>
         <field name="sexo">femenino</field>
         <field name="fecha">1985-06-12 00:00:00</field>
         <field name="telefono">600987654</field>
         <field name="direccion">Avenida Central 45</field>
-        <field name="email">ana.lopez@email.com</field>
+        <field name="email">ana.lopez@gmail.com</field>
     </record>
     <record id="cliente2" model="quintofly.cliente">
         <field name="dni">22222222B</field>
-        <field name="nombre">Carlos Ruiz</field>
+        <field name="nombre">Carlos</field>
+        <field name="apellido">Ruiz</field>
         <field name="sexo">masculino</field>
         <field name="fecha">1992-04-25 00:00:00</field>
         <field name="telefono">612345678</field>
         <field name="direccion">Calle Mayor 78</field>
-        <field name="email">carlos.ruiz@email.com</field>
+        <field name="email">carlos.ruiz@gmail.com</field>
     </record>
     <record id="cliente3" model="quintofly.cliente">
         <field name="dni">33333333C</field>
-        <field name="nombre">María Fernández</field>
+        <field name="nombre">María</field>
+        <field name="apellido">Fernández</field>
         <field name="sexo">femenino</field>
         <field name="fecha">1978-11-30 00:00:00</field>
         <field name="telefono">622334455</field>
         <field name="direccion">Calle Sol 22</field>
-        <field name="email">maria.fernandez@email.com</field>
+        <field name="email">maria.fernandez@yahoo.com</field>
     </record>
     <record id="cliente4" model="quintofly.cliente">
         <field name="dni">44444444D</field>
-        <field name="nombre">Javier Martínez</field>
+        <field name="nombre">Javier</field>
+        <field name="apellido">Martínez</field>
         <field name="sexo">masculino</field>
         <field name="fecha">1980-02-18 00:00:00</field>
         <field name="telefono">633556677</field>
         <field name="direccion">Avenida Libertad 10</field>
-        <field name="email">javier.martinez@email.com</field>
+        <field name="email">javier.martinez@hotmail.com</field>
     </record>
     <record id="cliente5" model="quintofly.cliente">
         <field name="dni">55555555E</field>
-        <field name="nombre">Elena Gómez</field>
+        <field name="nombre">Elena</field>
+        <field name="apellido">Gómez</field>
         <field name="sexo">femenino</field>
         <field name="fecha">1995-08-05 00:00:00</field>
         <field name="telefono">644778899</field>
         <field name="direccion">Paseo del Río 7</field>
-        <field name="email">elena.gomez@email.com</field>
+        <field name="email">elena.gomez@outlook.com</field>
     </record>
 
     <!-- Aeronaves -->

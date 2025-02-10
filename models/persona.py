@@ -7,7 +7,8 @@ class Persona(models.Model):
     _description = 'Persona'
 
     dni = fields.Char("DNI", size = 9, required=True)
-    nombre = fields.Char("Nombre completo", size = 50, required=True)
+    nombre = fields.Char("Nombre", size = 20, required=True)
+    apellido = fields.Char("Apellido", size = 20, required=True)
     sexo = fields.Selection([
     ('masculino', 'Masculino'),
     ('femenino', 'Femenino'),],
