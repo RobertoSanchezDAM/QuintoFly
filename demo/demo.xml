@@ -123,21 +123,24 @@
     <record id="vuelo1" model="quintofly.vuelo">
         <field name="origen">Madrid</field>
         <field name="destino">Barcelona</field>
-        <field name="fecha_vuelo">2024-02-10 10:00:00</field>
+        <field name="fecha_salida">2025-02-10 16:00:00</field>
+        <field name="fecha_llegada">2025-02-10 16:30:00</field>
         <field name="aeronave_id" ref="aeronave1"/>
         <field name="piloto_ids" eval="[(6, 0, [ref('piloto1')])]"/>
     </record>
     <record id="vuelo2" model="quintofly.vuelo">
         <field name="origen">Valencia</field>
         <field name="destino">Sevilla</field>
-        <field name="fecha_vuelo">2024-02-11 14:00:00</field>
+        <field name="fecha_salida">2025-02-11 14:00:00</field>
+        <field name="fecha_llegada">2025-02-11 15:00:00</field>
         <field name="aeronave_id" ref="aeronave2"/>
         <field name="piloto_ids" eval="[(6, 0, [ref('piloto2')])]"/>
     </record>
     <record id="vuelo3" model="quintofly.vuelo">
         <field name="origen">Bilbao</field>
         <field name="destino">Madrid</field>
-        <field name="fecha_vuelo">2024-02-12 16:00:00</field>
+        <field name="fecha_salida">2025-02-12 18:00:00</field>
+        <field name="fecha_llegada">2025-02-12 18:30:00</field>
         <field name="aeronave_id" ref="aeronave1"/>
         <field name="piloto_ids" eval="[(6, 0, [ref('piloto3')])]"/>
     </record>

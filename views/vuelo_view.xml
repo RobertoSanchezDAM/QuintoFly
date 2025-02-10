@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <data>
+        <!-- Vista de lista (tree) de vuelos -->
         <record model="ir.ui.view" id="quintofly.vuelo_tree">
             <field name="name">Vuelos</field>
             <field name="model">quintofly.vuelo</field>
@@ -9,49 +9,49 @@
                     <field name="piloto_ids"/>
                     <field name="origen"/>
                     <field name="destino"/>
-                    <field name="fecha_vuelo"/>
+                    <field name="fecha_salida"/>
+                    <field name="fecha_llegada"/>
                     <field name="aeronave_id"/>
                 </tree>
             </field>
         </record>
 
+        <!-- Vista de búsqueda de vuelos -->
         <record id="vuelo_view_search" model="ir.ui.view">
             <field name="name">quintofly.vuelo.search</field>
             <field name="model">quintofly.vuelo</field>
             <field name="arch" type="xml">
+                <search string="Buscar Vuelos">
+                    <!-- Filtros existentes -->
+                    <field name="origen" string="Origen"/>
+                    <field name="destino" string="Destino"/>
+                    <field name="piloto_ids" string="Pilotos"/>
+                    <field name="aeronave_id" string="Aeronave"/>
 
-            <search string="Buscar Vuelos">
-                <!--  Filtros existentes  -->
-                <field name="origen" string="Origen"/>
-                <field name="destino" string="Destino"/>
-                <field name="piloto_ids" string="Pilotos"/>
-                <field name="aeronave_id" string="Aeronave"/>
-                
-                <separator/>
+                    <separator/>
+                    <!-- Filtros -->
+                    <filter name="filter_boeing" string="Aeronave contiene Boeing" domain="[('aeronave_id.modelo', 'ilike', 'Boeing')]"/>
+                    <filter name="filter_airbus" string="Aeronave contiene Airbus" domain="[('aeronave_id.modelo', 'ilike', 'Airbus')]"/>
 
-                <!-- Filtros -->
-                <filter name="filter_boeing" string="Aeronave contiene Boeing" domain="[('aeronave_id.modelo', 'ilike', 'Boeing')]"/>
-                <filter name="filter_airbus" string="Aeronave contiene Airbus" domain="[('aeronave_id.modelo', 'ilike', 'Airbus')]"/>
-
-                <separator/>
-
-                <!--  Agrupación  -->
-                <group expand="0" string="Agrupar por">
-                    <filter name="group_by_origen" string="Por Origen" context="{'group_by':'origen'}"/>
-                    <filter name="group_by_destino" string="Por Destino" context="{'group_by':'destino'}"/>
-                    <filter name="group_by_fecha" string="Por Fecha" context="{'group_by':'fecha_vuelo'}"/>
-                    <filter name="group_by_aeronave" string="Por Aeronave" context="{'group_by':'aeronave_id'}"/>
-                </group>
-            </search>
+                    <separator/>
+                    <!-- Agrupación -->
+                    <group expand="0" string="Agrupar por">
+                        <filter name="group_by_origen" string="Por Origen" context="{'group_by':'origen'}"/>
+                        <filter name="group_by_destino" string="Por Destino" context="{'group_by':'destino'}"/>
+                        <filter name="group_by_fecha" string="Por Fecha y Hora de salida" context="{'group_by':'fecha_salida'}"/>
+                        <filter name="group_by_fecha" string="Por Fecha y Hora de llegada" context="{'group_by':'fecha_llegada'}"/>
+                        <filter name="group_by_aeronave" string="Por Aeronave" context="{'group_by':'aeronave_id'}"/>
+                    </group>
+                </search>
             </field>
         </record>
 
-        <!--vista de calendario-->
+        <!-- Vista de calendario de vuelos -->
         <record id="view_vuelo_calendar" model="ir.ui.view">
             <field name="name">quintofly.vuelo.calendar</field>
             <field name="model">quintofly.vuelo</field>
             <field name="arch" type="xml">
-                <calendar string="Calendario de Vuelos" date_start="fecha_vuelo">
+                <calendar string="Calendario de Vuelos" date_start="fecha_salida" date_stop="fecha_llegada">
                     <field name="origen"/>
                     <field name="destino"/>
                     <field name="aeronave_id"/>
@@ -59,12 +59,26 @@
             </field>
         </record>
 
+        <!-- Vista Gantt de vuelos -->
+        <record id="view_vuelo_gantt" model="ir.ui.view">
+            <field name="name">quintofly.vuelo.gantt</field>
+            <field name="model">quintofly.vuelo</field>
+            <field name="arch" type="xml">
+                <gantt string="Gantt de Vuelos" date_start="fecha_salida" date_stop="fecha_llegada">
+                    <field name="origen"/>
+                    <field name="destino"/>
+                    <field name="aeronave_id"/>
+                </gantt>
+            </field>
+        </record>
 
+        <!-- Acción que vincula las vistas -->
         <record model="ir.actions.act_window" id="act_vuelo">
             <field name="name">Vuelos</field>
             <field name="res_model">quintofly.vuelo</field>
             <field name="search_view_id" ref="vuelo_view_search"/>
-            <field name="view_mode">tree,form,calendar</field>
+            <field name="view_mode">tree,form,calendar,gantt</field>
+            <field name="view_id" ref="quintofly.vuelo_tree"/>
         </record>
     </data>
 </odoo>
