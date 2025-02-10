@@ -15,7 +15,7 @@ class Piloto(models.Model):
         ('num_licencia_uniq',
         'UNIQUE(num_licencia)',
         'El numero de licencia tiene que ser único')
-        ]
+    ]
 
     def name_get(self):
         result = []

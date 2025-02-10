@@ -11,16 +11,16 @@ class Aeronave(models.Model):
     modelo = fields.Char("Modelo", required=True)
     capacidad_peso = fields.Float("Capacidad de peso (Kg)", required=True)
 
+    #constraint que hace que matricula sea UNIQUE
+    _sql_constraints=[
+        ('matricula_uniq',
+        'UNIQUE(matricula)',
+        'La matricula tiene que ser única')
+    ]
+
     def name_get(self):
         result = []
         for record in self:
             name = f"{record.matricula} --- {record.tipo} {record.modelo}"
             result.append((record.id, name))
         return result
-    
-    #constraint que hace que matricula sea UNIQUE
-    _sql_constraints=[
-        ('matricula_uniq',
-        'UNIQUE(matricula)',
-        'La matricula tiene que ser único')
-        ]

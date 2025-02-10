@@ -17,5 +17,5 @@ class LineaVenta(models.Model):
         ('venta_id_uniq',
         'UNIQUE(venta_id)',
         'El id de la Venta tiene que ser único')
-        ]
+    ]
 

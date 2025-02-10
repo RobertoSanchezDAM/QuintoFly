@@ -21,4 +21,4 @@ class Persona(models.Model):
         ('dni_uniq',
         'UNIQUE(dni)',
         'El DNI tiene que ser único')
-        ]
+    ]
