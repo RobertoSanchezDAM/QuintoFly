@@ -1,22 +1,21 @@
-# -- coding: utf-8 --
-
 from odoo import models, fields, api
 
 class Aeronave(models.Model):
     _name = 'quintofly.aeronave'
     _description = 'Aeronave'
+    
+    # Relación One2many con Vuelo
+    vuelo_ids = fields.One2many('quintofly.vuelo', 'aeronave_id', string="Vuelos")
 
-    foto=fields.Binary('Foto')
+    foto = fields.Binary('Foto')
     tipo = fields.Char("Tipo", required=True)
     matricula = fields.Char("Matrícula", required=True)
     modelo = fields.Char("Modelo", required=True)
     capacidad_peso = fields.Float("Capacidad de peso (Kg)", required=True)
 
-    #constraint que hace que matricula sea UNIQUE
-    _sql_constraints=[
-        ('matricula_uniq',
-        'UNIQUE(matricula)',
-        'La matricula tiene que ser única')
+    # Constraint que hace que matrícula sea única
+    _sql_constraints = [
+        ('matricula_uniq', 'UNIQUE(matricula)', 'La matrícula tiene que ser única')
     ]
 
     def name_get(self):
