@@ -120,7 +120,6 @@
     </record>
 
     <!-- Vuelos -->
-    <!-- Vuelos -->
     <record id="vuelo1" model="quintofly.vuelo">
         <field name="origen">Madrid</field>
         <field name="destino">Barcelona</field>
