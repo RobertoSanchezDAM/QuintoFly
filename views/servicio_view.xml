@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <data>
+
         <record model="ir.ui.view" id="quintofly.servicio_tree">
             <field name="name">Servicios</field>
             <field name="model">quintofly.servicio</field>
@@ -12,6 +13,36 @@
                 </tree>
             </field>
         </record>
+
+        <!-- Vista de búsqueda de servicios -->
+        <record id="servicio_view_search" model="ir.ui.view">
+            <field name="name">quintofly.servicio.search</field>
+            <field name="model">quintofly.servicio</field>
+            <field name="arch" type="xml">
+                <search string="Buscar Servicios">
+                    <!-- Filtros existentes -->
+                    <field name="tiposerv" string="Tipo de Servicio"/>
+                    <field name="precio_hora" string="Precio por Hora"/>
+                    <field name="precio_base" string="Precio Base"/>
+                    
+                    <separator/>
+                    <!-- Filtros personalizados -->
+                    <filter name="filter_turismo" string="Turismo" domain="[('tiposerv', '=', 'turismo')]"/>
+                    <filter name="filter_transporte" string="Transporte" domain="[('tiposerv', '=', 'transporte')]"/>
+                    <filter name="filter_fumigacion" string="Fumigación" domain="[('tiposerv', '=', 'fumigacion')]"/>
+                    <filter name="filter_clases" string="Clases de pilotaje" domain="[('tiposerv', '=', 'clases')]"/>
+                    
+                    <separator/>
+                    <!-- Agrupación -->
+                    <group expand="0" string="Agrupar por">
+                        <filter name="group_by_tipo" string="Por Tipo de Servicio" context="{'group_by':'tiposerv'}"/>
+                        <filter name="group_by_precio_hora" string="Por Precio por Hora" context="{'group_by':'precio_hora'}"/>
+                        <filter name="group_by_precio_base" string="Por Precio Base" context="{'group_by':'precio_base'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
         <record model="ir.actions.act_window" id="act_servicio">
             <field name="name">Servicios</field>
             <field name="res_model">quintofly.servicio</field>
