@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <data>
+        <!-- Vista Tree -->
         <record model="ir.ui.view" id="quintofly.venta_tree">
             <field name="name">Ventas</field>
             <field name="model">quintofly.venta</field>
@@ -13,10 +14,51 @@
                 </tree>
             </field>
         </record>
+
+        <!--Vista Kanban-->
+        <record model="ir.ui.view" id="quintofly.venta_kanban">
+                <field name="name">Ventas Kanban</field>
+                <field name="model">quintofly.venta</field>
+                <field name="arch" type="xml">
+                    <kanban>
+                        <templates>
+                            <t t-name="kanban-box">
+                                <div class="oe_kanban_card">
+                                        <div>
+                                            <strong>Cliente:</strong> 
+                                            <field name="cliente_id"/>
+                                        </div>
+                                        <div>
+                                            <strong>Total:</strong> 
+                                            <field name="total"/> €
+                                        </div>
+                                        <div>
+                                            <strong>Fecha:</strong> 
+                                            <field name="fecha_venta"/>
+                                        </div>
+                                        <div>
+                                            <strong>Observaciones:</strong> 
+                                            <field name="observaciones"/>
+                                        </div>
+                                </div>
+                            </t>
+                        </templates>
+                    </kanban>
+                </field>
+            </record>
+
+
+
+
+
+
+        <!-- Acción de Ventas con la vista Kanban incluida -->
         <record model="ir.actions.act_window" id="act_venta">
             <field name="name">Ventas</field>
             <field name="res_model">quintofly.venta</field>
-            <field name="view_mode">tree,form</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="view_id" ref="quintofly.venta_tree"/>
         </record>
+
     </data>
 </odoo>
