@@ -10,7 +10,11 @@
                         <group>
                             <field name="identificador"/>
                             <field name="concepto"/>
+                            <field name="venta_id"/>
+                            <field name="descripcion"/>
                             <field name="cliente_id"/>
+                            <field name="iva"/>
+                            <field name="subtotal"/>
                             <field name="importe_total"/>
                             <field name="fecha_factura"/>
                             <field name="estado"/>
@@ -32,8 +36,12 @@
             <field name="arch" type="xml">
                 <tree>
                     <field name="identificador"/>
+                    <field name="venta_id"/>
                     <field name="concepto"/>
+                    <field name="descripcion"/>
                     <field name="cliente_id"/>
+                    <field name="iva"/>
+                    <field name="subtotal"/>
                     <field name="importe_total"/>
                     <field name="fecha_factura"/>
                     <field name="estado"/>
