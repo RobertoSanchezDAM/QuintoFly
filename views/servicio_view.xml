@@ -43,10 +43,21 @@
             </field>
         </record>
 
+        <record id="quintofly_servicio_graph_view" model="ir.ui.view">
+            <field name="name">quintofly.servicio.graph</field>
+            <field name="model">quintofly.servicio</field>
+            <field name="arch" type="xml">
+                <graph string="Número de Servicios por Tipo" type="bar">
+                    <field name="tiposerv" type="col"/>
+                    <field name="id" type="measure"/>
+                </graph>
+            </field>
+        </record>
+
         <record model="ir.actions.act_window" id="act_servicio">
             <field name="name">Servicios</field>
             <field name="res_model">quintofly.servicio</field>
-            <field name="view_mode">tree,form</field>
+            <field name="view_mode">tree,form,graph</field>
         </record>
     </data>
 </odoo>
