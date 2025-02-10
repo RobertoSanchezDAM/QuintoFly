@@ -19,7 +19,7 @@
                             <button name="action_marcar_pagada" type="object" string="Marcar como Pagada"
                                     class="oe_highlight" attrs="{'invisible': [('estado', '!=', 'pendiente')]}"/>
                             <button name="action_cancelar" type="object" string="Marcar como Cancelada"
-                                    class="oe_highlight" attrs="{'invisible': [('estado', '!=', 'pendiente')]}"/>
+                                    class="oe_highlight" attrs="{'invisible': [('estado', '!=', 'pendiente')]}" style="margin-left: 5px;"/>
                         </footer>
                     </sheet>
                 </form>

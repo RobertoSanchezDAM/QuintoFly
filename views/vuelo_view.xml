@@ -29,6 +29,12 @@
                 
                 <separator/>
 
+                <!-- Filtros -->
+                <filter name="filter_boeing" string="Aeronave contiene Boeing" domain="[('aeronave_id.modelo', 'ilike', 'Boeing')]"/>
+                <filter name="filter_airbus" string="Aeronave contiene Airbus" domain="[('aeronave_id.modelo', 'ilike', 'Airbus')]"/>
+
+                <separator/>
+
                 <!--  Agrupación  -->
                 <group expand="0" string="Agrupar por">
                     <filter name="group_by_origen" string="Por Origen" context="{'group_by':'origen'}"/>
