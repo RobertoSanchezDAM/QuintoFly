@@ -6,6 +6,7 @@
             <field name="model">quintofly.aeronave</field>
             <field name="arch" type="xml">
                 <tree>
+                    <field name="foto"/>
                     <field name="matricula"/>
                     <field name="tipo"/>
                     <field name="modelo"/>
@@ -52,6 +53,10 @@
                     <templates>
                         <t t-name="kanban-box">
                             <div class="oe_kanban_card">
+                                <div class="o_kanban_image">
+                                    <field name="foto" widget="image" class="img img-fluid"/>
+                                </div>
+
                                 <div>
                                     <strong>Matrícula:</strong>
                                     <field name="matricula"/>
@@ -78,11 +83,10 @@
             </field>
         </record>
 
-
         <record model="ir.actions.act_window" id="act_aeronave">
             <field name="name">Aeronave</field>
             <field name="res_model">quintofly.aeronave</field>
-            <field name="view_mode">kanban,tree,form</field>
+            <field name="view_mode">tree,kanban,form</field>
         </record>
     </data>
 </odoo>

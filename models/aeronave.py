@@ -6,6 +6,7 @@ class Aeronave(models.Model):
     _name = 'quintofly.aeronave'
     _description = 'Aeronave'
 
+    foto=fields.Binary('Foto')
     tipo = fields.Char("Tipo", required=True)
     matricula = fields.Char("Matrícula", required=True)
     modelo = fields.Char("Modelo", required=True)
