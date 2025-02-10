@@ -43,10 +43,49 @@
             </field>
         </record>
 
+        <record model="ir.ui.view" id="quintofly.aeronave_kanban">
+            <field name="name">Aeronaves Kanban</field>
+            <field name="model">quintofly.aeronave</field>
+            <field name="arch" type="xml">
+                <kanban>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_kanban_card">
+                                <!-- Matrícula -->
+                                <div>
+                                    <strong>Matrícula:</strong>
+                                    <field name="matricula"/>
+                                </div>
+                                
+                                <!-- Tipo -->
+                                <div>
+                                    <strong>Tipo:</strong>
+                                    <field name="tipo"/>
+                                </div>
+                                
+                                <!-- Modelo -->
+                                <div>
+                                    <strong>Modelo:</strong>
+                                    <field name="modelo"/>
+                                </div>
+                                
+                                <!-- Capacidad de peso -->
+                                <div>
+                                    <strong>Capacidad de Peso:</strong>
+                                    <field name="capacidad_peso"/> Kg
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+
         <record model="ir.actions.act_window" id="act_aeronave">
             <field name="name">Aeronave</field>
             <field name="res_model">quintofly.aeronave</field>
-            <field name="view_mode">tree,form</field>
+            <field name="view_mode">kanban,tree,form</field>
         </record>
     </data>
 </odoo>
