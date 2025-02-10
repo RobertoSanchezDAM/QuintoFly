@@ -20,6 +20,6 @@ class Piloto(models.Model):
     def name_get(self):
         result = []
         for record in self:
-            name = f"{record.num_licencia} --- {record.nombre}"
+            name = f"{record.num_licencia} - {record.nombre}"
             result.append((record.id, name))
         return result

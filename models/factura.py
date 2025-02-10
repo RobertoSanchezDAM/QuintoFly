@@ -45,7 +45,7 @@ class Factura(models.Model):
     def name_get(self):
         result = []
         for record in self:
-            name = f"{record.identificador} --- {record.concepto}"
+            name = f"{record.identificador} - {record.concepto}"
             result.append((record.id, name))
         return result
     

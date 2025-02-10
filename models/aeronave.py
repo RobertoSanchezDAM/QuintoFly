@@ -21,6 +21,6 @@ class Aeronave(models.Model):
     def name_get(self):
         result = []
         for record in self:
-            name = f"{record.matricula} --- {record.tipo} {record.modelo}"
+            name = f"{record.matricula} - {record.tipo} {record.modelo}"
             result.append((record.id, name))
         return result

@@ -17,6 +17,6 @@ class Vuelo(models.Model):
     def name_get(self):
         result = []
         for record in self:
-            name = f"Vuelo {record.id} --- {record.origen} - {record.destino} --- {record.fecha_salida}"
+            name = f"Vuelo {record.id} - {record.origen} -> {record.destino} / {record.fecha_salida}"
             result.append((record.id, name))
         return result

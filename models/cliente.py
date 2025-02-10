@@ -19,6 +19,6 @@ class Cliente(models.Model):
     def name_get(self):
         result = []
         for record in self:
-            name = f"{record.dni} --- {record.nombre}" if record.dni else record.nombre
+            name = f"{record.dni} - {record.nombre}" if record.dni else record.nombre
             result.append((record.id, name))
         return result
