@@ -1,30 +1,250 @@
 <odoo>
-    <data>
-<!--
-          <record id="object0" model="quintofly.quintofly">
-            <field name="name">Object 0</field>
-            <field name="value">0</field>
-          </record>
+  <data>
+      <!-- Pilotos -->
+    <record id="piloto1" model="quintofly.piloto">
+        <field name="dni">66666666F</field>
+        <field name="nombre">Pedro Torres</field>
+        <field name="sexo">masculino</field>
+        <field name="fecha">1975-09-14 00:00:00</field>
+        <field name="telefono">655443322</field>
+        <field name="direccion">Avenida del Aire 5</field>
+        <field name="num_licencia">1001</field>
+        <field name="anyos_experiencia">15</field>
+    </record>
+    <record id="piloto2" model="quintofly.piloto">
+        <field name="dni">77777777G</field>
+        <field name="nombre">Laura Sánchez</field>
+        <field name="sexo">femenino</field>
+        <field name="fecha">1988-03-22 00:00:00</field>
+        <field name="telefono">688112233</field>
+        <field name="direccion">Calle de las Nubes 12</field>
+        <field name="num_licencia">1002</field>
+        <field name="anyos_experiencia">10</field>
+    </record>
+    <record id="piloto3" model="quintofly.piloto">
+        <field name="dni">88888888H</field>
+        <field name="nombre">Sergio Ramírez</field>
+        <field name="sexo">masculino</field>
+        <field name="fecha">1990-12-10 00:00:00</field>
+        <field name="telefono">677998877</field>
+        <field name="direccion">Plaza del Cielo 3</field>
+        <field name="num_licencia">1003</field>
+        <field name="anyos_experiencia">8</field>
+    </record>
+    <record id="piloto4" model="quintofly.piloto">
+        <field name="dni">99999999I</field>
+        <field name="nombre">Natalia Gómez</field>
+        <field name="sexo">femenino</field>
+        <field name="fecha">1982-07-30 00:00:00</field>
+        <field name="telefono">699445566</field>
+        <field name="direccion">Camino del Viento 7</field>
+        <field name="num_licencia">1004</field>
+        <field name="anyos_experiencia">18</field>
+    </record>
+    <record id="piloto5" model="quintofly.piloto">
+        <field name="dni">10101010J</field>
+        <field name="nombre">Fernando López</field>
+        <field name="sexo">masculino</field>
+        <field name="fecha">1985-11-25 00:00:00</field>
+        <field name="telefono">655667788</field>
+        <field name="direccion">Avenida del Sol 9</field>
+        <field name="num_licencia">1005</field>
+        <field name="anyos_experiencia">12</field>
+    </record>
 
-          <record id="object1" model="quintofly.quintofly">
-            <field name="name">Object 1</field>
-            <field name="value">10</field>
-          </record>
+    <!-- Clientes -->
+    <record id="cliente1" model="quintofly.cliente">
+        <field name="dni">11111111A</field>
+        <field name="nombre">Ana López</field>
+        <field name="sexo">femenino</field>
+        <field name="fecha">1985-06-12 00:00:00</field>
+        <field name="telefono">600987654</field>
+        <field name="direccion">Avenida Central 45</field>
+        <field name="email">ana.lopez@email.com</field>
+    </record>
+    <record id="cliente2" model="quintofly.cliente">
+        <field name="dni">22222222B</field>
+        <field name="nombre">Carlos Ruiz</field>
+        <field name="sexo">masculino</field>
+        <field name="fecha">1992-04-25 00:00:00</field>
+        <field name="telefono">612345678</field>
+        <field name="direccion">Calle Mayor 78</field>
+        <field name="email">carlos.ruiz@email.com</field>
+    </record>
+    <record id="cliente3" model="quintofly.cliente">
+        <field name="dni">33333333C</field>
+        <field name="nombre">María Fernández</field>
+        <field name="sexo">femenino</field>
+        <field name="fecha">1978-11-30 00:00:00</field>
+        <field name="telefono">622334455</field>
+        <field name="direccion">Calle Sol 22</field>
+        <field name="email">maria.fernandez@email.com</field>
+    </record>
+    <record id="cliente4" model="quintofly.cliente">
+        <field name="dni">44444444D</field>
+        <field name="nombre">Javier Martínez</field>
+        <field name="sexo">masculino</field>
+        <field name="fecha">1980-02-18 00:00:00</field>
+        <field name="telefono">633556677</field>
+        <field name="direccion">Avenida Libertad 10</field>
+        <field name="email">javier.martinez@email.com</field>
+    </record>
+    <record id="cliente5" model="quintofly.cliente">
+        <field name="dni">55555555E</field>
+        <field name="nombre">Elena Gómez</field>
+        <field name="sexo">femenino</field>
+        <field name="fecha">1995-08-05 00:00:00</field>
+        <field name="telefono">644778899</field>
+        <field name="direccion">Paseo del Río 7</field>
+        <field name="email">elena.gomez@email.com</field>
+    </record>
 
-          <record id="object2" model="quintofly.quintofly">
-            <field name="name">Object 2</field>
-            <field name="value">20</field>
-          </record>
+    <!-- Aeronaves -->
+    <record id="aeronave1" model="quintofly.aeronave">
+        <field name="tipo">Avión</field>
+        <field name="matricula">AV123</field>
+        <field name="modelo">Boeing 737</field>
+        <field name="capacidad_peso">20000</field>
+    </record>
+    <record id="aeronave2" model="quintofly.aeronave">
+        <field name="tipo">Avión</field>
+        <field name="matricula">AV456</field>
+        <field name="modelo">Airbus A320</field>
+        <field name="capacidad_peso">18000</field>
+    </record>
+    <record id="aeronave3" model="quintofly.aeronave">
+        <field name="tipo">Avión</field>
+        <field name="matricula">AV101</field>
+        <field name="modelo">Cessna 172</field>
+        <field name="capacidad_peso">800</field>
+    </record>
 
-          <record id="object3" model="quintofly.quintofly">
-            <field name="name">Object 3</field>
-            <field name="value">30</field>
-          </record>
+    <!-- Vuelos -->
+    <!-- Vuelos -->
+    <record id="vuelo1" model="quintofly.vuelo">
+        <field name="origen">Madrid</field>
+        <field name="destino">Barcelona</field>
+        <field name="fecha_vuelo">2024-02-10 10:00:00</field>
+        <field name="aeronave_id" ref="aeronave1"/>
+        <field name="piloto_ids" eval="[(6, 0, [ref('piloto1')])]"/>
+    </record>
+    <record id="vuelo2" model="quintofly.vuelo">
+        <field name="origen">Valencia</field>
+        <field name="destino">Sevilla</field>
+        <field name="fecha_vuelo">2024-02-11 14:00:00</field>
+        <field name="aeronave_id" ref="aeronave2"/>
+        <field name="piloto_ids" eval="[(6, 0, [ref('piloto2')])]"/>
+    </record>
+    <record id="vuelo3" model="quintofly.vuelo">
+        <field name="origen">Bilbao</field>
+        <field name="destino">Madrid</field>
+        <field name="fecha_vuelo">2024-02-12 16:00:00</field>
+        <field name="aeronave_id" ref="aeronave1"/>
+        <field name="piloto_ids" eval="[(6, 0, [ref('piloto3')])]"/>
+    </record>
+      
+    <!-- Servicios -->
+    <record id="servicio1" model="quintofly.servicio">
+        <field name="tiposerv">turismo</field>
+        <field name="descripcion">Tour aéreo sobre la costa</field>
+        <field name="precio_hora">200</field>
+        <field name="precio_base">600</field>
+    </record>
+    <record id="servicio2" model="quintofly.servicio">
+        <field name="tiposerv">transporte</field>
+        <field name="descripcion">Transporte aéreo privado</field>
+        <field name="precio_hora">500</field>
+        <field name="precio_base">1500</field>
+    </record>
+    <record id="servicio3" model="quintofly.servicio">
+        <field name="tiposerv">fumigacion</field>
+        <field name="descripcion">Servicio de fumigación aérea</field>
+        <field name="precio_hora">300</field>
+        <field name="precio_base">900</field>
+    </record>
+    <record id="servicio4" model="quintofly.servicio">
+        <field name="tiposerv">clases</field>
+        <field name="descripcion">Clases de pilotaje avanzado</field>
+        <field name="precio_hora">400</field>
+        <field name="precio_base">1200</field>
+    </record>
+    <record id="servicio5" model="quintofly.servicio">
+        <field name="tiposerv">turismo</field>
+        <field name="descripcion">Ruta por la montaña</field>
+        <field name="precio_hora">250</field>
+        <field name="precio_base">750</field>
+    </record>
 
-          <record id="object4" model="quintofly.quintofly">
-            <field name="name">Object 4</field>
-            <field name="value">40</field>
-          </record>
--->
-    </data>
+    <!-- Ventas -->
+    <record id="venta1" model="quintofly.venta">
+        <field name="cliente_id" ref="cliente1"/>
+        <field name="total">1000</field>
+        <field name="fecha_venta">2024-02-01 00:00:00</field>
+        <field name="observaciones">Pago en efectivo</field>
+    </record>
+    <record id="venta2" model="quintofly.venta">
+        <field name="cliente_id" ref="cliente2"/>
+        <field name="total">750</field>
+        <field name="fecha_venta">2024-02-02 00:00:00</field>
+        <field name="observaciones">Pago con tarjeta</field>
+    </record>
+    <record id="venta3" model="quintofly.venta">
+        <field name="cliente_id" ref="cliente3"/>
+        <field name="total">100</field>
+        <field name="fecha_venta">2024-02-04 00:00:00</field>
+        <field name="observaciones">Pago con tarjeta</field>
+    </record>
+    <record id="venta4" model="quintofly.venta">
+        <field name="cliente_id" ref="cliente4"/>
+        <field name="total">800</field>
+        <field name="fecha_venta">2024-02-05 00:00:00</field>
+        <field name="observaciones">Pago en efectivo</field>
+    </record>
+
+    <!-- Facturas -->
+    <record id="factura1" model="quintofly.factura">
+        <field name="venta_id" ref="venta1"/>
+        <field name="cliente_id" ref="cliente1"/>
+        <field name="identificador">001</field>
+        <field name="iva">21</field>
+        <field name="subtotal">1000</field>
+        <field name="concepto">Viaje turístico</field>
+        <field name="descripcion">Tour aéreo sobre la costa</field>
+        <field name="fecha_factura">2024-02-01 00:00:00</field>
+        <field name="estado">pendiente</field>
+    </record>
+    <record id="factura1" model="quintofly.factura">
+        <field name="venta_id" ref="venta2"/>
+        <field name="cliente_id" ref="cliente2"/>
+        <field name="identificador">002</field>
+        <field name="iva">10</field>
+        <field name="subtotal">750</field>
+        <field name="concepto">Viaje turístico</field>
+        <field name="descripcion">Vuelo turistico</field>
+        <field name="fecha_factura">2024-02-03 00:00:00</field>
+        <field name="estado">pendiente</field>
+    </record>
+    <record id="factura3" model="quintofly.factura">
+        <field name="venta_id" ref="venta3"/>
+        <field name="cliente_id" ref="cliente3"/>
+        <field name="identificador">003</field>
+        <field name="iva">1</field>
+        <field name="subtotal">100</field>
+        <field name="concepto">Almuerzo</field>
+        <field name="descripcion">Almuerzo en el aeropuerto</field>
+        <field name="fecha_factura">2024-02-04 00:00:00</field>
+        <field name="estado">pendiente</field>
+    </record>
+    <record id="factura4" model="quintofly.factura">
+        <field name="venta_id" ref="venta4"/>
+        <field name="cliente_id" ref="cliente4"/>
+        <field name="identificador">004</field>
+        <field name="iva">5</field>
+        <field name="subtotal">800</field>
+        <field name="concepto">Almacenamiento dde productos</field>
+        <field name="descripcion">Almacenamiento dde producto para transportar</field>
+        <field name="fecha_factura">2024-02-05 00:00:00</field>
+        <field name="estado">pendiente</field>
+    </record>
+  </data>
 </odoo>
