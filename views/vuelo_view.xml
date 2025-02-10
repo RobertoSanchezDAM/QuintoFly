@@ -59,12 +59,54 @@
             </field>
         </record>
 
+        <!-- Vista Kanban para vuelo -->
+        <record id="view_vuelo_kanban" model="ir.ui.view">
+            <field name="name">quintofly.vuelo.kanban</field>
+            <field name="model">quintofly.vuelo</field>
+            <field name="arch" type="xml">
+                <kanban>
+                    <!-- Plantilla del kanban -->
+                    <templates>
+                        <t t-name="kanban-box">
+                        <div class="o_kanban_card">
+                            <!-- Mostrar la aeronave asociada -->
+                            <strong>
+                                <strong>Aeronave: </strong><field name="aeronave_id"/>
+                            </strong>
+
+                            <!-- Origen y Destino -->
+                            <div>
+                                <strong>Origen: </strong><field name="origen"/>
+                            </div>
+                            <div>
+                                <strong>Destino: </strong><field name="destino"/>
+                            </div>
+
+                            <!-- Fechas -->
+                            <div>
+                                <strong>Fecha de salida:</strong><field name="fecha_salida"/>
+                            <br/>
+                                <strong>Fecha de llegada:</strong><field name="fecha_llegada"/>
+                            </div>
+
+                            <!-- Pilotos asignados -->
+                            <div>
+                                <strong>Pilotos:</strong>
+                                <field name="piloto_ids" widget="many2many_tags"/>
+                            </div>
+                        </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
         <!-- Acción que vincula las vistas -->
         <record model="ir.actions.act_window" id="act_vuelo">
             <field name="name">Vuelos</field>
             <field name="res_model">quintofly.vuelo</field>
             <field name="search_view_id" ref="vuelo_view_search"/>
-            <field name="view_mode">tree,form,calendar</field>
+            <field name="view_mode">kanban,tree,form,calendar</field>
             <field name="view_id" ref="quintofly.vuelo_tree"/>
         </record>
     </data>

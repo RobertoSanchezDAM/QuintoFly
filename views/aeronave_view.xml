@@ -6,10 +6,12 @@
             <field name="model">quintofly.aeronave</field>
             <field name="arch" type="xml">
                 <tree>
+                    <field name="foto"/>
                     <field name="matricula"/>
                     <field name="tipo"/>
                     <field name="modelo"/>
                     <field name="capacidad_peso"/>
+                    <field name="vuelo_ids"/>
                 </tree>
             </field>
         </record>
@@ -43,10 +45,54 @@
             </field>
         </record>
 
+        <!--Vista kanban-->
+        <record model="ir.ui.view" id="quintofly.aeronave_kanban">
+            <field name="name">Aeronaves Kanban</field>
+            <field name="model">quintofly.aeronave</field>
+            <field name="arch" type="xml">
+                <kanban>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_kanban_card">
+                                <div class="o_kanban_image">
+                                    <field name="foto" widget="image" class="img img-fluid"/>
+                                </div>
+
+                                <div>
+                                    <strong>Matrícula:</strong>
+                                    <field name="matricula"/>
+                                </div>
+                                
+                                <div>
+                                    <strong>Tipo:</strong>
+                                    <field name="tipo"/>
+                                </div>
+                                
+                                <div>
+                                    <strong>Modelo:</strong>
+                                    <field name="modelo"/>
+                                </div>
+                                
+                                <div>
+                                    <strong>Capacidad de Peso:</strong>
+                                    <field name="capacidad_peso"/> Kg
+                                </div>
+
+                                <div>
+                                <strong>Vuelos:</strong>
+                                    <field name="vuelo_ids" widget="many2many_tags"/>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
         <record model="ir.actions.act_window" id="act_aeronave">
             <field name="name">Aeronave</field>
             <field name="res_model">quintofly.aeronave</field>
-            <field name="view_mode">tree,form</field>
+            <field name="view_mode">tree,kanban,form</field>
         </record>
     </data>
 </odoo>
