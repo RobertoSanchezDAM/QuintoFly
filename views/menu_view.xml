@@ -12,9 +12,6 @@
     <menuitem id="quintofly.factura_menu" name="Facturas" parent="quintofly.main_quintofly_menu"/>
     <menuitem id="quintofly.factura_manage" name="Gestionar Facturas" parent="quintofly.factura_menu" action="quintofly.act_factura"/>
 
-    <menuitem id="quintofly.lineaventa_menu" name="Líneas de Venta" parent="quintofly.main_quintofly_menu"/>
-    <menuitem id="quintofly.lineaventa_manage" name="Gestionar Líneas de Venta" parent="quintofly.lineaventa_menu" action="act_lineaventa"/>
-
     <menuitem id="quintofly.piloto_menu" name="Pilotos" parent="quintofly.main_quintofly_menu"/>
     <menuitem id="quintofly.piloto_manage" name="Gestionar Pilotos" parent="quintofly.piloto_menu" action="quintofly.act_piloto"/>
 

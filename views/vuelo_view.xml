@@ -59,25 +59,12 @@
             </field>
         </record>
 
-        <!-- Vista Gantt de vuelos -->
-        <record id="view_vuelo_gantt" model="ir.ui.view">
-            <field name="name">quintofly.vuelo.gantt</field>
-            <field name="model">quintofly.vuelo</field>
-            <field name="arch" type="xml">
-                <gantt string="Gantt de Vuelos" date_start="fecha_salida" date_stop="fecha_llegada">
-                    <field name="origen"/>
-                    <field name="destino"/>
-                    <field name="aeronave_id"/>
-                </gantt>
-            </field>
-        </record>
-
         <!-- Acción que vincula las vistas -->
         <record model="ir.actions.act_window" id="act_vuelo">
             <field name="name">Vuelos</field>
             <field name="res_model">quintofly.vuelo</field>
             <field name="search_view_id" ref="vuelo_view_search"/>
-            <field name="view_mode">tree,form,calendar,gantt</field>
+            <field name="view_mode">tree,form,calendar</field>
             <field name="view_id" ref="quintofly.vuelo_tree"/>
         </record>
     </data>

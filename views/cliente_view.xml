@@ -24,6 +24,7 @@
                     <field name="email" string="Email"/>
                     
                     <separator/>
+                    
                     <!-- Filtros personalizados -->
                     <filter name="filter_gmail" string="Gmail" domain="[('email', 'ilike', '%@gmail.com')]"/>
                     <filter name="filter_hotmail" string="Hotmail" domain="[('email', 'ilike', '%@hotmail.com')]"/>
@@ -36,6 +37,7 @@
                         <filter name="group_by_nombre" string="Por Nombre" context="{'group_by':'nombre'}"/>
                         <filter name="group_by_apellido" string="Por Apellido" context="{'group_by':'apellido'}"/>
                         <filter name="group_by_sexo" string="Por Sexo" context="{'group_by':'sexo'}"/> 
+                        <filter name="group_by_fecha_nac" string="Fecha de nacimiento" context="{'group_by':'fecha'}"/>
                     </group>
                 </search>
             </field>

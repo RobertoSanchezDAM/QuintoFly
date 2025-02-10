@@ -13,6 +13,38 @@
                 </tree>
             </field>
         </record>
+
+        <!-- Vista de Búsqueda para Pilotos -->
+        <record model="ir.ui.view" id="quintofly.piloto_search">
+            <field name="name">quintofly.piloto.search</field>
+            <field name="model">quintofly.piloto</field>
+            <field name="arch" type="xml">
+                <search>
+                    <!-- Filtros existentes -->
+                    <field name="nombre" string="Nombre"/>
+                    <field name="apellido" string="Apellido"/>
+                    
+                    <separator/>
+
+                    <filter name="filter_añyos_mayor_5" string="Más de 5 años de experiencia" domain="[('anyos_experiencia','>',5)]" />
+                    <filter name="filter_añyos_mayor_10" string="Más de 10 años de experiencia" domain="[('anyos_experiencia','>',10)]" />
+                    <filter name="filter_añyos_mayor_15" string="Más de 15 años de experiencia" domain="[('anyos_experiencia','>',15)]" />
+                    <filter name="filter_añyos_mayor_20" string="Más de 20 años de experiencia" domain="[('anyos_experiencia','>',20)]" />
+                    <filter name="filter_añyos_mayor_25" string="Más de 25 años de experiencia" domain="[('anyos_experiencia','>',25)]" />
+
+                    <separator/>
+                    <!-- Agrupación -->
+                    <group string="Años de Experiencia">
+                        <filter name="group_by_nombre" string="Por Nombre" context="{'group_by':'nombre'}"/>
+                        <filter name="group_by_apellido" string="Por Apellido" context="{'group_by':'apellido'}"/>
+                        <filter name="group_by_sexo" string="Por Sexo" context="{'group_by':'sexo'}"/> 
+                        <filter name="group_by_anyos_experiencia" string="Años de experiencia" context="{'group_by':'anyos_experiencia'}"/>
+                        <filter name="group_by_fecha_nac" string="Fecha de nacimiento" context="{'group_by':'fecha'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
         <record model="ir.actions.act_window" id="act_piloto">
             <field name="name">Pilotos</field>
             <field name="res_model">quintofly.piloto</field>
