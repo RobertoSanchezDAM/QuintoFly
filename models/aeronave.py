@@ -1,4 +1,5 @@
 from odoo import models, fields, api
+from odoo.exceptions import ValidationError
 
 class Aeronave(models.Model):
     _name = 'quintofly.aeronave'
@@ -17,6 +18,18 @@ class Aeronave(models.Model):
     _sql_constraints = [
         ('matricula_uniq', 'UNIQUE(matricula)', 'La matrícula tiene que ser única')
     ]
+
+    @api.constrains('matricula')
+    def _check_matricula(self):
+        """
+        Valida que la matrícula tenga 2 letras seguidas de 3 números.
+        """
+        import re
+        patron = re.compile(r'^[A-Z]{2}\d{3}$')
+        
+        for record in self:
+            if not patron.match(record.matricula.upper()):
+                raise ValidationError("La matrícula debe tener 2 letras seguidas de 3 números. Ejemplo: AB123")
 
     def name_get(self):
         result = []
