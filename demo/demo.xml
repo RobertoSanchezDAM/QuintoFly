@@ -152,8 +152,9 @@
         <field name="fecha_salida">2025-02-12 18:00:00</field>
         <field name="fecha_llegada">2025-02-12 18:30:00</field>
         <field name="aeronave_id" ref="aeronave1"/>
-        <field name="piloto_ids" eval="[(6, 0, [ref('piloto3')])]"/>
+        <field name="piloto_ids" eval="[(6, 0, [ref('piloto3'), ref('piloto4')])]"/>
     </record>
+
       
     <!-- Servicios -->
     <record id="servicio1" model="quintofly.servicio">
